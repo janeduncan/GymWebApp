@@ -3,12 +3,13 @@ require_relative('../db/sql_runner')
 class Session
 
   attr_reader :id
-  attr_accessor :gym_class_id, :instructor_id, :available_spaces, :class_time, :class_date, :duration
+  attr_accessor :gym_class_id, :instructor_id, :studio_id, :available_spaces, :class_time, :class_date, :duration
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']
     @gym_class_id = options['gym_class_id']
     @instructor_id = options['instructor_id']
+    @studio_id = options['studio_id']
     @available_spaces = options['available_spaces'].to_i()
     @class_time = options['class_time']
     @class_date = options['class_date']
@@ -16,16 +17,16 @@ class Session
   end
 
   def save()
-    sql ="INSERT INTO sessions (gym_class_id, instructor_id, available_spaces, class_time, class_date, duration)
-    VALUES ($1, $2, $3, $4, $5, $6) RETURNING *"
-    values = [@gym_class_id, @instructor_id, @available_spaces, @class_time, @class_date, @duration]
+    sql ="INSERT INTO sessions (gym_class_id, instructor_id, studio_id, available_spaces, class_time, class_date, duration)
+    VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *"
+    values = [@gym_class_id, @instructor_id, @studio_id, @available_spaces, @class_time, @class_date, @duration]
     session = SqlRunner.run(sql, values)
     @id = session.first()['id'].to_i()
   end
 
   def update()
-    sql = "UPDATE sessions SET (gym_class_id, instructor_id, available_spaces, class_time, class_date, duration) = ($1, $2, $3, $4, $5, $6) WHERE id = $7"
-    values = [@gym_class_id, @instructor_id, @available_spaces, @class_time, @class_date, @duration, @id]
+    sql = "UPDATE sessions SET (gym_class_id, instructor_id, studio_id, available_spaces, class_time, class_date, duration) = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8"
+    values = [@gym_class_id, @instructor_id, @studio_id, @available_spaces, @class_time, @class_date, @duration, @id]
     SqlRunner.run(sql, values)
   end
 

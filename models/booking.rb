@@ -38,7 +38,7 @@ class Booking
 
   def self.all()
     sql = "SELECT * FROM bookings"
-    houses = SqlRunner.run(sql)
+    bookings = SqlRunner.run(sql)
     result = bookings.map { |booking| Booking.new(booking) }
     return result
   end
