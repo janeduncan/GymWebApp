@@ -6,7 +6,7 @@ DROP TABLE instructors;
 CREATE TABLE members (
   id SERIAL4 PRIMARY KEY,
   first_name VARCHAR(255),
-  second_name VARCHAR(255),
+  last_name VARCHAR(255),
   email VARCHAR(255),
   phone_number VARCHAR(255),
   membership_type VARCHAR(255)
@@ -15,14 +15,14 @@ CREATE TABLE members (
 CREATE TABLE instructors (
   id SERIAL4 PRIMARY KEY,
   first_name VARCHAR(255),
-  second_name VARCHAR(255),
+  last_name VARCHAR(255),
   email VARCHAR(255),
   phone_number VARCHAR(255)
 );
 
 CREATE TABLE gym_classes (
   id SERIAL4 PRIMARY KEY,
-  name VARCHAR(255),
+  class_name VARCHAR(255),
   description VARCHAR(255),
   instructor INT REFERENCES instructors(id) ON DELETE CASCADE,
   capacity INT,
