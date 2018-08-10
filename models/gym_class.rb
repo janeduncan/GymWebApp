@@ -3,30 +3,25 @@ require_relative('../db/sql_runner')
 class GymClass
 
   attr_reader :id
-  attr_accessor :class_name, :description, :instructor, :capacity, :class_time, :class_date, :duration
+  attr_accessor :class_name, :description
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']
     @class_name = options['class_name']
     @description = options['description']
-    @instructor = options['instructor']
-    @capacity = options['capacity'].to_i()
-    @class_time = options['class_time']
-    @class_date = options['class_date']
-    @duration = options['duration']
   end
 
   def save()
-    sql ="INSERT INTO members (class_name, description, instructor, capacity, class_time, class_date, duration)
-    VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *"
-    values = [@class_name, @description, @instructor, @capacity, @class_time, @class_date, @duration]
+    sql ="INSERT INTO gym_classes (class_name, description)
+    VALUES ($1, $2) RETURNING *"
+    values = [@class_name, @description]
     gymclass = SqlRunner.run(sql, values)
     @id = gymclass.first()['id'].to_i()
   end
 
   def update()
-    sql = "UPDATE members SET (class_name, description, instructor, capacity, class_time, class_date, duration) = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8"
-    values = [@class_name, @description, @instructor, @capacity, @class_time, @class_date, @duration, @id]
+    sql = "UPDATE gym_classes SET (class_name, description) = ($1, $2) WHERE id = $3"
+    values = [@class_name, @description, @id]
     SqlRunner.run(sql, values)
   end
 

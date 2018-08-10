@@ -12,3 +12,10 @@ MAIN
 
 EXTRA
 - [ ] Possibly trainer if enough time? Trainer profile with link to list their future classes.
+
+CLASSES
+- [ ] GymClass (aka film)
+- [ ] Member (aka customer)
+- [ ] Booking (aka ticket)
+- [ ] Session (aka screening)
+- [ ] Instructor

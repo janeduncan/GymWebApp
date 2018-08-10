@@ -4,8 +4,7 @@ require_relative("../member")
 class TestMember < MiniTest::Test
 
   def setup()
-    options = {"id" => 1, "first_name" => "Jane", "last_name" => "Duncan",
-      "email" => "janeduncan@live.co.uk", "phone_number" => "07790556033", "membership_type" => "Premium"}
+    options = {"id" => 1, "first_name" => "Jane", "last_name" => "Duncan", "membership_type" => "Premium"}
     @member = Member.new(options)
   end
 
@@ -17,16 +16,6 @@ class TestMember < MiniTest::Test
   def test_last_name()
     result = @member.last_name()
     assert_equal("Duncan", result)
-  end
-
-  def test_email()
-    result = @member.email()
-    assert_equal("janeduncan@live.co.uk", result)
-  end
-
-  def test_phone_number()
-    result = @member.phone_number()
-    assert_equal("07790556033", result)
   end
 
   def test_membership_type()
