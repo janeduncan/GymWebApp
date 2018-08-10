@@ -33,26 +33,6 @@ These briefs detail what is expected of you, including an MVP. Note that the MVP
 
 Talk through your ideas with an instructor during the planning process, and before you begin coding.
 
-### Animal Shelter
-
-The Scottish Animal Shelter accepts orphaned or stray animals and takes care of them until they can be adopted by a new owner. The shelter has a list of potential new owners for the animals. Animals may take a while to be trained up and made healthy before being available for adoption.
-
-They are looking for a management system to keep track of their animals and owners.
-
-#### MVP:
-
-* A list of all their animals and their admission date
-* Mark an animal as being adoptable/not adoptable
-* Assign an animal to a new owner
-* List all the owners and their adopted animals
-
-#### Possible Extensions:
-
-* CRUD actions for animals/owners
-* Have separate pages for animals ready for adoption and ones still in training/vet care
-* Search for animals by breed/type
-* Any other ideas you might come up with
-
 ### Gym
 
 A local gym has asked you to build a piece of software to help them to manage memberships, and register members for classes.
@@ -73,51 +53,6 @@ A local gym has asked you to build a piece of software to help them to manage me
 
 - Classes could have a maximum capacity, and users can only be added while there is space remaining.
 - The gym could be able to give its members Premium or Standard membership. Standard members can only be signed up for classes during off-peak hours.
-
-### Shop Inventory
-
-Build an app which allows a shopkeeper to track their shop's inventory. This is not an app which the customer will see, it is an admin/management app for the shop workers.
-
-#### MVP
-
-* The inventory should track individual products, including a name, description, stock quantity, buying cost, and selling price.
-* The inventory should track manufacturers, including a name and any other appropriate details.
-* The shop can sell anything you like, but you should be able to create, edit and delete manufacturers and products separately.
-  * This might mean that it makes more sense for a car shop to track makes and models of cars. Or a bookstore might sell books by author, or by publisher, and not by manufacturer. You are free to name classes and tables as appropriate to your project.
-* Show an inventory page, listing all the details for all the products in stock in a single view.
-* As well as showing stock quantity as a number, the app should visually highlight "low stock" and "out of stock" items to the user.
-
-#### Inspired by
-
-eBay, Amazon (back end only), Magento
-
-#### Possible Extensions
-
-* Calculate the markup on items in the store, and display it in the inventory
-* Filter the inventory list by manufacturer. For example, provide an option to view all books in stock by a certain author.
-* Categorise your items. Books might be categorised by genre (crime, horror, romance...) and cars might be categorised by type (SUV, coupé, hatchback...). Provide an option to filter the inventory list by these categories.
-
-### Spending Tracker
-
-Build an app that allows a user to track their spending.
-
-#### MVP
-
-* The app should allow the user to create, edit and delete merchants, e.g. Tesco, Amazon, ScotRail
-* The app should allow the user to create, edit and delete tags for their spending, e.g. groceries, entertainment, transport
-* The user should be able to assign tags and merchants to a transaction, as well as an amount spent on each transaction.
-* The app should display all the transactions a user has made in a single view, with each transaction's amount, merchant and tag, and a total for all transactions.
-
-#### Inspired by:
-
-Monzo, MoneyDashboard, lots of mobile/online banking apps
-
-#### Possible Extensions
-
-* Transactions should have a timestamp, and the user should be able to view transactions sorted by the time they took place.
-* The user should be able to supply a budget, and the app should alert the user somehow when when they are nearing this budget or have gone over it.
-* The user should be able to filter their view of transactions, for example, to view all transactions in a given month, or view all spending on groceries.
-
 
 ## Submission
 
