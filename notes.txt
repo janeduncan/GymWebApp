@@ -1,1 +1,14 @@
+MAIN
+- [ ] User journeys - Adding a member, Adding a member to a specific class etc
+- [ ] Proto persona
+- [ ] User needs
+- [ ] Class diagrams
+- [ ] Database diagrams
+- [ ] Object diagrams
+- [ ] SQL Diagrams
+- [ ] Wireframes (Responsive - desktop & mobile devices)
+- [ ] Coding!
+- [ ] HTML & CSS
 
+EXTRA
+- [ ] Possibly trainer if enough time? Trainer profile with link to list their future classes.
