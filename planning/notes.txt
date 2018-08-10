@@ -4,8 +4,8 @@ MAIN
 - [ ] User needs
 - [ ] Class diagrams
 - [ ] Database diagrams
-- [ ] Object diagrams
-- [ ] SQL Diagrams
+- [ ] Object diagrams (?)
+- [ ] SQL Diagrams (?)
 - [ ] Wireframes (Responsive - desktop & mobile devices)
 - [ ] Coding!
 - [ ] HTML & CSS
