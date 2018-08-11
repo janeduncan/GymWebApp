@@ -1,5 +1,6 @@
+require('pry')
 require_relative("../models/booking")
-require_relative("../models/gym_class")
+require_relative("../models/gymclass")
 require_relative("../models/member")
 require_relative("../models/instructor")
 require_relative("../models/studio")
@@ -77,26 +78,11 @@ instructor2.save()
 
 # Classes
 
-class1 = GymClass.new({ "class_name" => "Cycle", "description" => "Our cycle class
-                      is an indoor experience where you’ll spin your way through a
-                      mixture of terrains - tackling hills, time trials, sprints
-                      and flats. You’ll ride to motivating music whilst improving
-                      your cardio fitness and strengthening your legs and core." })
-class2 = GymClass.new({ "class_name" => "Circuits", "description" => "Complete a
-                      structured and varied set of timed exercises all designed to
-                      maximise your workout and help you achieve your fitness goals.
-                      Great if your goal is Weight Loss or Strength & Conditioning." })
-class3 = GymClass.new({ "class_name" => "Abs", "description" => "This workout will
-                      focus on your entire core - from head to hips.  Great if your
-                      goal is Weight Loss, Toning or Strength & Conditioning." })
-class4 = GymClass.new({ "class_name" => "Fat Burn", "description" => "Spending as
-                      much time as possible in your optimum training zone for burning
-                      calories and fat, this session focusses on varying styles on
-                      interval training, including Tabata." })
-class5 = GymClass.new({ "class_name" => "Pilates", "description" => "A system of physical
-                      conditioning involving low-impact exercises and stretches designed
-                      to strengthen muscles of the torso and often performed using
-                      specialised equipment." })
+class1 = GymClass.new({ "class_name" => "Cycle", "description" => "Description of class." })
+class2 = GymClass.new({ "class_name" => "Circuits", "description" => "Description of class." })
+class3 = GymClass.new({ "class_name" => "Abs", "description" => "Description of class." })
+class4 = GymClass.new({ "class_name" => "Fat Burn", "description" => "Description of class." })
+class5 = GymClass.new({ "class_name" => "Pilates", "description" => "Description of class." })
 class1.save()
 class2.save()
 class3.save()
@@ -105,15 +91,15 @@ class5.save()
 
 # Sessions
 
-session1 = Session.new({ "gym_class_id" => class1.id(), "instructor_id" => instructor1.id(), "studio_id" => studio1.id(), "available_spaces" => , "class_time" => "", "class_date" => "", "duration" => , "peak_hours" => "" })
+session1 = Session.new({ "gym_class_id" => class1.id(), "instructor_id" => instructor1.id(), "studio_id" => studio1.id(), "available_spaces" => 15, "class_time" => "07:30:00", "class_date" => "2018-09-01", "duration" => 30, "peak_hours" => true })
 
-session2 = Session.new({ "gym_class_id" => class2.id(), "instructor_id" => instructor2.id(), "studio_id" => studio2.id(), "available_spaces" => , "class_time" => "", "class_date" => "", "duration" => , "peak_hours" => "" })
+session2 = Session.new({ "gym_class_id" => class2.id(), "instructor_id" => instructor2.id(), "studio_id" => studio2.id(), "available_spaces" => 12, "class_time" => "09:00:00", "class_date" => "2018-09-02", "duration" => 30, "peak_hours" => true })
 
-session3 = Session.new({ "gym_class_id" => class3.id(), "instructor_id" => instructor1.id(), "studio_id" => studio3.id(), "available_spaces" => , "class_time" => "", "class_date" => "", "duration" => , "peak_hours" => "" })
+session3 = Session.new({ "gym_class_id" => class3.id(), "instructor_id" => instructor1.id(), "studio_id" => studio3.id(), "available_spaces" => 10, "class_time" => "13:00:00", "class_date" => "2018-09-03", "duration" => 30, "peak_hours" => false })
 
-session4 = Session.new({ "gym_class_id" => class4.id(), "instructor_id" => instructor2.id(), "studio_id" => studio2.id(), "available_spaces" => , "class_time" => "", "class_date" => "", "duration" => , "peak_hours" => "" })
+session4 = Session.new({ "gym_class_id" => class4.id(), "instructor_id" => instructor2.id(), "studio_id" => studio2.id(), "available_spaces" => 12, "class_time" => "18:30:00", "class_date" => "2018-09-04", "duration" => 30, "peak_hours" => true })
 
-session5 = Session.new({ "gym_class_id" => class5.id(), "instructor_id" => instructor1.id(), "studio_id" => studio3.id(), "available_spaces" => , "class_time" => "", "class_date" => "", "duration" => , "peak_hours" => "" })
+session5 = Session.new({ "gym_class_id" => class5.id(), "instructor_id" => instructor1.id(), "studio_id" => studio3.id(), "available_spaces" => 8, "class_time" => "15:00:00", "class_date" => "2018-09-05", "duration" => 30, "peak_hours" => false })
 session1.save()
 session2.save()
 session3.save()
@@ -132,3 +118,29 @@ booking2.save()
 booking3.save()
 booking4.save()
 booking5.save()
+
+binding.pry
+nil
+
+# Class descriptions (adjust length)
+
+# class1 = GymClass.new({ "class_name" => "Cycle", "description" => "Our cycle class
+#                       is an indoor experience where you’ll spin your way through a
+#                       mixture of terrains - tackling hills, time trials, sprints
+#                       and flats. You’ll ride to motivating music whilst improving
+#                       your cardio fitness and strengthening your legs and core." })
+# class2 = GymClass.new({ "class_name" => "Circuits", "description" => "Complete a
+#                       structured and varied set of timed exercises all designed to
+#                       maximise your workout and help you achieve your fitness goals.
+#                       Great if your goal is Weight Loss or Strength & Conditioning." })
+# class3 = GymClass.new({ "class_name" => "Abs", "description" => "This workout will
+#                       focus on your entire core - from head to hips.  Great if your
+#                       goal is Weight Loss, Toning or Strength & Conditioning." })
+# class4 = GymClass.new({ "class_name" => "Fat Burn", "description" => "Spending as
+#                       much time as possible in your optimum training zone for burning
+#                       calories and fat, this session focusses on varying styles on
+#                       interval training, including Tabata." })
+# class5 = GymClass.new({ "class_name" => "Pilates", "description" => "A system of physical
+#                       conditioning involving low-impact exercises and stretches designed
+#                       to strengthen muscles of the torso and often performed using
+#                       specialised equipment." })

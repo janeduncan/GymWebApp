@@ -12,7 +12,7 @@ class GymClass
   end
 
   def save()
-    sql ="INSERT INTO gym_classes (class_name, description)
+    sql ="INSERT INTO gymclasses (class_name, description)
     VALUES ($1, $2) RETURNING *"
     values = [@class_name, @description]
     gymclass = SqlRunner.run(sql, values)
@@ -20,31 +20,31 @@ class GymClass
   end
 
   def update()
-    sql = "UPDATE gym_classes SET (class_name, description) = ($1, $2) WHERE id = $3"
+    sql = "UPDATE gymclasses SET (class_name, description) = ($1, $2) WHERE id = $3"
     values = [@class_name, @description, @id]
     SqlRunner.run(sql, values)
   end
 
   def delete()
-    sql = "DELETE FROM gym_classes WHERE id = $1"
+    sql = "DELETE FROM gymclasses WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
 
   def self.delete_all()
-    sql = "DELETE FROM gym_classes"
+    sql = "DELETE FROM gymclasses"
     SqlRunner.run(sql)
   end
 
   def self.all()
-    sql = "SELECT * FROM gym_classes"
+    sql = "SELECT * FROM gymclasses"
     classes = SqlRunner.run(sql)
     result = classes.map { |gymclass| GymClass.new(gymclass) }
     return result
   end
 
   def self.find(id)
-    sql = "SELECT * FROM gym_classes WHERE id = $1"
+    sql = "SELECT * FROM gymclasses WHERE id = $1"
     values = [id]
     classes = SqlRunner.run(sql, values)
     result = GymClass.new(classes.first())

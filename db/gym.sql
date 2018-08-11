@@ -1,14 +1,14 @@
 DROP TABLE bookings;
-DROP TABLE sessions
-DROP TABLE gym_classes;
+DROP TABLE sessions;
+DROP TABLE gymclasses;
 DROP TABLE members;
 DROP TABLE instructors;
-DROP TABLE studio;
+DROP TABLE studios;
 
 CREATE TABLE studios (
   id SERIAL4 PRIMARY KEY,
   studio VARCHAR(255)
-)
+);
 
 CREATE TABLE members (
   id SERIAL4 PRIMARY KEY,
@@ -21,9 +21,11 @@ CREATE TABLE instructors (
   id SERIAL4 PRIMARY KEY,
   first_name VARCHAR(255),
   last_name VARCHAR(255),
+  email VARCHAR(255),
+  phone_number VARCHAR(255)
 );
 
-CREATE TABLE gym_classes (
+CREATE TABLE gymclasses (
   id SERIAL4 PRIMARY KEY,
   class_name VARCHAR(255),
   description VARCHAR(255)
@@ -31,7 +33,7 @@ CREATE TABLE gym_classes (
 
 CREATE TABLE sessions (
   id SERIAL4 PRIMARY KEY,
-  gym_class_id INT REFERENCES gym_classes(id) ON DELETE CASCADE,
+  gymclass_id INT REFERENCES gymclasses(id) ON DELETE CASCADE,
   instructor_id INT REFERENCES instructors(id) ON DELETE CASCADE,
   studio_id INT REFERENCES studios(id) ON DELETE CASCADE,
   available_spaces INT,

@@ -18,7 +18,7 @@ class Session
   end
 
   def save()
-    sql ="INSERT INTO sessions (gym_class_id, instructor_id, studio_id, available_spaces, class_time, class_date, duration, peak_hours)
+    sql ="INSERT INTO sessions (gymclass_id, instructor_id, studio_id, available_spaces, class_time, class_date, duration, peak_hours)
     VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *"
     values = [@gym_class_id, @instructor_id, @studio_id, @available_spaces, @class_time, @class_date, @duration, @peak_hours]
     session = SqlRunner.run(sql, values)
@@ -26,7 +26,7 @@ class Session
   end
 
   def update()
-    sql = "UPDATE sessions SET (gym_class_id, instructor_id, studio_id, available_spaces, class_time, class_date, duration, peak_hours) = ($1, $2, $3, $4, $5, $6, $7, $8) WHERE id = $9"
+    sql = "UPDATE sessions SET (gymclass_id, instructor_id, studio_id, available_spaces, class_time, class_date, duration, peak_hours) = ($1, $2, $3, $4, $5, $6, $7, $8) WHERE id = $9"
     values = [@gym_class_id, @instructor_id, @studio_id, @available_spaces, @class_time, @class_date, @duration, @peak_hours, @id]
     SqlRunner.run(sql, values)
   end
@@ -56,5 +56,7 @@ class Session
     result = Session.new(classes.first())
     return result
   end
+
+  # Need to add a method to show all members that are registered to a class session!
 
 end
