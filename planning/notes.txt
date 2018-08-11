@@ -33,3 +33,17 @@ http://colorsafe.co/ - Check colour contrast (WCAG Guidelines)
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {...}
+
+
+dropdb gym
+createdb gym
+psql -d gym -f db/gym.sql
+ruby db/seeds.rb
+ruby app.rb
+
+require_relative("../models/booking")
+require_relative("../models/gymclass")
+require_relative("../models/member")
+require_relative("../models/instructor")
+require_relative("../models/session")
+require_relative("../models/studio")

@@ -91,15 +91,15 @@ class5.save()
 
 # Sessions
 
-session1 = Session.new({ "gym_class_id" => class1.id(), "instructor_id" => instructor1.id(), "studio_id" => studio1.id(), "available_spaces" => 15, "class_time" => "07:30:00", "class_date" => "2018-09-01", "duration" => 30, "peak_hours" => true })
+session1 = Session.new({ "gymclass_id" => class1.id(), "instructor_id" => instructor1.id(), "studio_id" => studio1.id(), "available_spaces" => 15, "class_time" => "07:30:00", "class_date" => "2018-09-01", "duration" => 30, "peak_hours" => true })
 
-session2 = Session.new({ "gym_class_id" => class2.id(), "instructor_id" => instructor2.id(), "studio_id" => studio2.id(), "available_spaces" => 12, "class_time" => "09:00:00", "class_date" => "2018-09-02", "duration" => 30, "peak_hours" => true })
+session2 = Session.new({ "gymclass_id" => class2.id(), "instructor_id" => instructor2.id(), "studio_id" => studio2.id(), "available_spaces" => 12, "class_time" => "09:00:00", "class_date" => "2018-09-02", "duration" => 30, "peak_hours" => true })
 
-session3 = Session.new({ "gym_class_id" => class3.id(), "instructor_id" => instructor1.id(), "studio_id" => studio3.id(), "available_spaces" => 10, "class_time" => "13:00:00", "class_date" => "2018-09-03", "duration" => 30, "peak_hours" => false })
+session3 = Session.new({ "gymclass_id" => class3.id(), "instructor_id" => instructor1.id(), "studio_id" => studio3.id(), "available_spaces" => 10, "class_time" => "13:00:00", "class_date" => "2018-09-03", "duration" => 30, "peak_hours" => false })
 
-session4 = Session.new({ "gym_class_id" => class4.id(), "instructor_id" => instructor2.id(), "studio_id" => studio2.id(), "available_spaces" => 12, "class_time" => "18:30:00", "class_date" => "2018-09-04", "duration" => 30, "peak_hours" => true })
+session4 = Session.new({ "gymclass_id" => class4.id(), "instructor_id" => instructor2.id(), "studio_id" => studio2.id(), "available_spaces" => 12, "class_time" => "18:30:00", "class_date" => "2018-09-04", "duration" => 30, "peak_hours" => true })
 
-session5 = Session.new({ "gym_class_id" => class5.id(), "instructor_id" => instructor1.id(), "studio_id" => studio3.id(), "available_spaces" => 8, "class_time" => "15:00:00", "class_date" => "2018-09-05", "duration" => 30, "peak_hours" => false })
+session5 = Session.new({ "gymclass_id" => class5.id(), "instructor_id" => instructor1.id(), "studio_id" => studio3.id(), "available_spaces" => 8, "class_time" => "15:00:00", "class_date" => "2018-09-05", "duration" => 30, "peak_hours" => false })
 session1.save()
 session2.save()
 session3.save()
