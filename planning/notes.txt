@@ -11,11 +11,25 @@ MAIN
 - [ ] HTML & CSS
 
 EXTRA
-- [ ] Possibly trainer if enough time? Trainer profile with link to list their future classes.
+- [x] Possibly trainer if enough time? Trainer profile with link to list their future classes.
 
 CLASSES
-- [ ] GymClass (aka film)
-- [ ] Member (aka customer)
-- [ ] Booking (aka ticket)
-- [ ] Session (aka screening)
-- [ ] Instructor
+- [x] GymClass (aka film)
+- [x] Member (aka customer)
+- [x] Booking (aka ticket)
+- [x] Session (aka screening)
+- [x] Instructor
+- [x] Studio
+
+TESTS
+- [x] GymClass
+- [x] Member
+- [x] Session
+- [x] Instructor
+
+https://www.w3schools.com/howto/howto_css_cards.asp - Instructors page
+https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp - Device breakpoints
+http://colorsafe.co/ - Check colour contrast (WCAG Guidelines)
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}

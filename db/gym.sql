@@ -37,7 +37,8 @@ CREATE TABLE sessions (
   available_spaces INT,
   class_time TIME,
   class_date DATE,
-  duration INT
+  duration INT,
+  peak_hours BOOLEAN
 );
 
 CREATE TABLE bookings (
