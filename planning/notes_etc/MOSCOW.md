@@ -5,8 +5,8 @@
 
 * [x] The app should allow the gym to create / edit / delete members.
 * [x] The app should allow the gym to create / edit / delete classes.
-* [ ] The app should allow the gym to add members to specific classes.
-* [ ] The app should show a list of all upcoming classes.
+* [x] The app should allow the gym to add members to specific classes.
+* [x] The app should show a list of all upcoming classes.
 * [ ] The app should show all members that are registered for a particular class.
 
 #### SHOULD (Extensions)
