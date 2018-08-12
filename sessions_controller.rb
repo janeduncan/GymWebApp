@@ -1,9 +1,11 @@
 require("sinatra")
 require("sinatra/contrib/all")
 require("pry-byebug")
-
-require_relative( './models/session' )
-also_reload( './models/*' )
+require_relative("./models/session")
+require_relative("./models/instructor")
+require_relative("./models/studio")
+require_relative("./models/gymclass")
+also_reload("./models/*")
 
 # Index
 get '/sessions' do
@@ -13,6 +15,9 @@ end
 
 # New
 get '/sessions/new' do
+  @instructors = Instructor.all()
+  @studios = Studio.all()
+  @gymclasses = GymClass.all()
   erb(:"sessions/new")
 end
 
@@ -32,12 +37,15 @@ end
 # Edit
 get '/sessions/:id/edit' do
   @session = Session.find( params[:id] )
+  @instructors = Instructor.all()
+  @studios = Studio.all()
+  @gymclasses = GymClass.all()
   erb( :"sessions/edit")
 end
 
 # Update
 post '/sessions/:id' do
-  session.new( params ).update
+  Session.new( params ).update
   redirect to '/sessions'
 end
 

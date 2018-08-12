@@ -1,0 +1,16 @@
+<p>Class: <%= @session.gymclass_name() %> </p>
+<p>Instructor: <%= @session.instructor() %> </p>
+<p>Studio: <%= @session.studio() %> </p>
+<p>Available spaces: <%= @session.available_spaces() %> </p>
+<p>Time: <%= @session.class_time() %> </p>
+<p>Date: <%= @session.class_date() %> </p>
+<p>Duration: <%= @session.duration() %> </p>
+<p>Members:  </p>
+
+<form action="/sessions/<%= @session.id %>/edit" method="get">
+  <input type="submit" value="Edit session">
+</form>
+
+<form action="/sessions/<%= @session.id %>/delete" method="post">
+  <input type="submit" value="Delete session">
+</form>

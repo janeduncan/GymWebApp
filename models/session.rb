@@ -57,6 +57,8 @@ class Session
     return result
   end
 
+  # These methods should return an object not just the name?
+
   def gymclass_name()
     sql = "SELECT class_name FROM gymclasses WHERE id = $1"
     values = [@gymclass_id]
@@ -67,6 +69,12 @@ class Session
     sql = "SELECT first_name FROM instructors WHERE id = $1"
     values = [@instructor_id]
     return SqlRunner.run(sql, values).first['first_name']
+  end
+
+  def studio()
+    sql = "SELECT studio FROM studios WHERE id = $1"
+    values = [@studio_id]
+    return SqlRunner.run(sql, values).first['studio']
   end
 
   # Need to add a method to show all members that are registered to a class session!

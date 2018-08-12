@@ -1,9 +1,8 @@
 require("sinatra")
 require("sinatra/contrib/all")
 require("pry-byebug")
-
-require_relative( './models/member.rb' )
-also_reload( './models/*' )
+require_relative("./models/member")
+also_reload("./models/*")
 
 # Index
 get '/members' do

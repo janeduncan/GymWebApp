@@ -19,11 +19,13 @@ class Booking
     @id = booking.first()['id'].to_i()
   end
 
-  def update()
-    sql = "UPDATE bookings SET (member_id, session_id) = ($1, $2) WHERE id = $3"
-    values = [@member_id, @session_id, @id]
-    SqlRunner.run(sql, values)
-  end
+  # Don't need this?
+
+  # def update()
+  #   sql = "UPDATE bookings SET (member_id, session_id) = ($1, $2) WHERE id = $3"
+  #   values = [@member_id, @session_id, @id]
+  #   SqlRunner.run(sql, values)
+  # end
 
   def delete()
     sql = "DELETE FROM bookings WHERE id = $1"
@@ -50,18 +52,20 @@ class Booking
     return Booking.new(booking.first())
   end
 
-  def member()
-    sql = "SELECT * FROM members WHERE id = $1"
-    values = [@member_id]
-    result = SqlRunner.run(sql, values)
-    return Member.new(result.first())
-  end
-
-  def gym_session()
-    sql = "SELECT * FROM sessions WHERE id = $1"
-    values = [@session_id]
-    result = SqlRunner.run(sql, values)
-    return Session.new(result.first())
-  end
+  # Not sure about these?
+  
+  # def member()
+  #   sql = "SELECT * FROM members WHERE id = $1"
+  #   values = [@member_id]
+  #   result = SqlRunner.run(sql, values)
+  #   return Member.new(result.first())
+  # end
+  #
+  # def gym_session()
+  #   sql = "SELECT * FROM sessions WHERE id = $1"
+  #   values = [@session_id]
+  #   result = SqlRunner.run(sql, values)
+  #   return Session.new(result.first())
+  # end
 
 end

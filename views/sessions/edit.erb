@@ -1,0 +1,43 @@
+<h1>Edit class</h1>
+<form action="/sessions/<%= @session.id %>" method="post">
+  <label for="class-select">Select a class: </label>
+    <select id="class-select" name="gymclass_id">
+     <% @gymclasses.each do |gymclass| %>
+      <option value="<%= gymclass.id().to_i%>"> <%=gymclass.class_name()%></option>
+      <% end %>
+    </select>
+  <br>
+  <label for="instructor-select">Select an instructor: </label>
+    <select id="instructor-select" name="instructor_id">
+      <% @instructors.each do |instructor| %>
+      <option value="<%= instructor.id().to_i %>"> <%=instructor.full_name()%></option>
+     <% end %>
+    </select>
+  <br>
+  <label for="studio-select">Select a studio: </label>
+   <select id="studio-select" name="studio_id">
+     <% @studios.each do |studio| %>
+      <option value="<%= studio.id().to_i%>"> <%=studio.studio()%></option>
+      <% end %>
+   </select>
+  <br>
+  <label for="availble-spaces">Available spaces: </label>
+  <input id="available-spaces" type="number" name="available_spaces" value= <%= @session.available_spaces() %>>
+  <br>
+  <label for="time">Time: </label>
+  <input id="time" type="time" name="class_time" value= <%= @session.class_time() %>>
+  <br>
+  <label for="date">Date: </label>
+  <input id="date" type="date" name="class_date" value= <%= @session.class_date() %>>
+  <br>
+  <label for="duration">Duration: </label>
+  <input id="duration" type="number" name="duration" value= <%= @session.duration() %>>
+  <br>
+  <label for="peak-hours">Peak hours: </label>
+  <select id="peak-hours" name="peak_hours">
+    <option value="false">No</option>
+    <option value="true">Yes</option>
+  </select>
+  <br>
+  <input type="submit" value="Submit">
+</form>
