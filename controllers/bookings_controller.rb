@@ -1,37 +1,34 @@
 require("sinatra")
 require("sinatra/contrib/all")
 require("pry-byebug")
-require_relative("./models/booking")
-require_relative("./models/session")
-require_relative("./models/member")
-require_relative("./models/instructor")
-require_relative("./models/studio")
-require_relative("./models/gymclass")
+require_relative("../models/booking")
+require_relative("../models/session")
+require_relative("../models/member")
 also_reload("./models/*")
 
 # Index
 get '/bookings' do
   @bookings = Booking.all()
-  erb(:"bookings/index")
+  erb(:"../views/bookings/index")
 end
 
 # New
 get '/bookings/new' do
   @sessions = Session.all()
   @members = Member.all()
-  erb(:"bookings/new")
+  erb(:"../views/bookings/new")
 end
 
 get '/bookings/:id' do
   @booking = Booking.find(params[:id])
-  erb(:"bookings/show")
+  erb(:"../views/bookings/show")
 end
 
 # Create
 post '/bookings' do
   @booking = Booking.new(params)
   @booking.save()
-  erb(:"bookings/create")
+  erb(:"../views/bookings/create")
 end
 
 # Delete

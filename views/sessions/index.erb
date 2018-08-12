@@ -2,7 +2,7 @@
 
 <% @sessions.each do |session| %>
 
-  <p><%= session.gymclass_name() %> class at <%= session.class_time() %> on <%= session.class_date() %> </p>
+  <p><%= session.gymclass() %> class at <%= session.class_time() %> on <%= session.class_date() %> </p>
 
   <p> <a href="/sessions/<%= session.id %>">Show class</a> </p>
   <hr />

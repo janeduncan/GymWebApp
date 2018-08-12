@@ -1,16 +1,16 @@
 require("sinatra")
 require("sinatra/contrib/all")
 require("pry-byebug")
-require_relative("./models/session")
-require_relative("./models/instructor")
-require_relative("./models/studio")
-require_relative("./models/gymclass")
+require_relative("../models/session")
+require_relative("../models/instructor")
+require_relative("../models/studio")
+require_relative("../models/gymclass")
 also_reload("./models/*")
 
 # Index
 get '/sessions' do
   @sessions = Session.all()
-  erb(:"sessions/index")
+  erb(:"../views/sessions/index")
 end
 
 # New
@@ -18,20 +18,20 @@ get '/sessions/new' do
   @instructors = Instructor.all()
   @studios = Studio.all()
   @gymclasses = GymClass.all()
-  erb(:"sessions/new")
+  erb(:"../views/sessions/new")
 end
 
 # Show
 get '/sessions/:id' do
   @session = Session.find( params[:id] )
-  erb(:"sessions/show")
+  erb(:"../views/sessions/show")
 end
 
 # Create
 post '/sessions' do
   @session = Session.new( params )
   @session.save()
-  erb(:"sessions/create")
+  erb(:"../views/sessions/create")
 end
 
 # Edit
@@ -40,7 +40,7 @@ get '/sessions/:id/edit' do
   @instructors = Instructor.all()
   @studios = Studio.all()
   @gymclasses = GymClass.all()
-  erb( :"sessions/edit")
+  erb( :"../views/sessions/edit")
 end
 
 # Update

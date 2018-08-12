@@ -1,37 +1,37 @@
 require("sinatra")
 require("sinatra/contrib/all")
 require("pry-byebug")
-require_relative("./models/member")
+require_relative("../models/member")
 also_reload("./models/*")
 
 # Index
 get '/members' do
   @members = Member.all()
-  erb(:"members/index")
+  erb(:"../views/members/index")
 end
 
 # New
 get '/members/new' do
-  erb(:"members/new")
+  erb(:"../views/members/new")
 end
 
 # Show
 get '/members/:id' do
   @member = Member.find(params[:id])
-  erb(:"members/show")
+  erb(:"../views/members/show")
 end
 
 # Create
 post '/members' do
   @member = Member.new(params)
   @member.save()
-  erb(:"members/create")
+  erb(:"../views/members/create")
 end
 
 # Edit
 get '/members/:id/edit' do
   @member = Member.find(params[:id])
-  erb(:"members/edit")
+  erb(:"../views/members/edit")
 end
 
 # Update
