@@ -121,26 +121,3 @@ booking5.save()
 
 binding.pry
 nil
-
-# Class descriptions (adjust length)
-
-# class1 = GymClass.new({ "class_name" => "Cycle", "description" => "Our cycle class
-#                       is an indoor experience where you’ll spin your way through a
-#                       mixture of terrains - tackling hills, time trials, sprints
-#                       and flats. You’ll ride to motivating music whilst improving
-#                       your cardio fitness and strengthening your legs and core." })
-# class2 = GymClass.new({ "class_name" => "Circuits", "description" => "Complete a
-#                       structured and varied set of timed exercises all designed to
-#                       maximise your workout and help you achieve your fitness goals.
-#                       Great if your goal is Weight Loss or Strength & Conditioning." })
-# class3 = GymClass.new({ "class_name" => "Abs", "description" => "This workout will
-#                       focus on your entire core - from head to hips.  Great if your
-#                       goal is Weight Loss, Toning or Strength & Conditioning." })
-# class4 = GymClass.new({ "class_name" => "Fat Burn", "description" => "Spending as
-#                       much time as possible in your optimum training zone for burning
-#                       calories and fat, this session focusses on varying styles on
-#                       interval training, including Tabata." })
-# class5 = GymClass.new({ "class_name" => "Pilates", "description" => "A system of physical
-#                       conditioning involving low-impact exercises and stretches designed
-#                       to strengthen muscles of the torso and often performed using
-#                       specialised equipment." })
