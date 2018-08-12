@@ -7,10 +7,10 @@
 <p>Duration: <%= @session.duration() %> </p>
 <p>Members:  </p>
 
-<form action="/sessions/<%= @session.id %>/edit" method="get">
-  <input type="submit" value="Edit session">
+<form action="/sessions/<%= @session.id %>/edit" method="get" style="display:inline;">
+  <input type="submit" value="Edit class">
 </form>
 
-<form action="/sessions/<%= @session.id %>/delete" method="post">
-  <input type="submit" value="Delete session">
+<form action="/sessions/<%= @session.id %>/delete" method="post" style="display:inline;">
+  <input type="submit" value="Delete class">
 </form>
