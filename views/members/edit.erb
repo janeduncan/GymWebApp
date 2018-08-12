@@ -1,0 +1,17 @@
+<form action="/members/<%= @member.id %>" method="post">
+
+  <label for="first-name">First name: </label>
+  <input id="first-name" type="text" name="first_name" value= <%= @member.first_name() %>>
+  <br>
+  <label for="last-name">Last name: </label>
+  <input id="last-name" type="text" name="last_name" value= <%= @member.last_name() %>>
+  <br>
+  <label for="membership-type">Membership type: </label>
+  <select id="membership-type" name="membership_type">
+    <option value="Standard">Standard</option>
+    <option value="Premium">Premium</option>
+  </select>
+  <br>
+  <input type="submit" value="Submit">
+
+</form>

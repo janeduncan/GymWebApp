@@ -1,0 +1,10 @@
+<h1>All Sessions</h1>
+
+<% @sessions.each do |session| %>
+
+  <p>Class: <%= session.gymclass_name() %> </p>
+  <p>Instructor: <%= session.instructor() %> </p>
+
+  <p> <a href="/sessions/<%= session.id %>">Show Session</a> </p>
+  <hr />
+<% end %>

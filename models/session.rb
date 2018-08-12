@@ -63,6 +63,12 @@ class Session
     return SqlRunner.run(sql, values).first['class_name']
   end
 
+  def instructor()
+    sql = "SELECT first_name FROM instructors WHERE id = $1"
+    values = [@instructor_id]
+    return SqlRunner.run(sql, values).first['first_name']
+  end
+
   # Need to add a method to show all members that are registered to a class session!
 
 end

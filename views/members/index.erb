@@ -1,0 +1,8 @@
+<h1>All Members</h1>
+
+<% @members.each do |member| %>
+  <p>Name: <%= member.full_name() %> </p>
+  <p>Membership Type: <%= member.membership_type() %> </p>
+  <p> <a href="/members/<%= member.id %>"> Edit/Delete </a> </p>
+  <hr />
+<% end %>
