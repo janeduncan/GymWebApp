@@ -1,7 +1,7 @@
 require("minitest/autorun")
 require_relative("../session")
 require_relative("../instructor")
-require_relative("../gym_class")
+require_relative("../gymclass")
 require_relative("../studio")
 
 class TestSession < MiniTest::Test

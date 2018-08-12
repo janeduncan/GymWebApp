@@ -10,9 +10,6 @@ MAIN
 - [ ] Coding!
 - [ ] HTML & CSS
 
-EXTRA
-- [x] Possibly trainer if enough time? Trainer profile with link to list their future classes.
-
 CLASSES
 - [x] GymClass (aka film)
 - [x] Member (aka customer)
@@ -30,16 +27,18 @@ TESTS
 https://www.w3schools.com/howto/howto_css_cards.asp - Instructors page
 https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp - Device breakpoints
 http://colorsafe.co/ - Check colour contrast (WCAG Guidelines)
+https://www.w3schools.com/sql/default.asp
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {...}
-
 
 dropdb gym
 createdb gym
 psql -d gym -f db/gym.sql
 ruby db/seeds.rb
 ruby app.rb
+
+- Check methods work in Pry!
 
 require_relative("../models/booking")
 require_relative("../models/gymclass")
