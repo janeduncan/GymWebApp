@@ -5,10 +5,10 @@
     <form action="/sessions" method="post">
 
       <div class="row">
-        <div class="col-25">
+        <div class="col-30">
           <label for="class-select">Select a class: </label>
         </div>
-        <div class="col-75">
+        <div class="col-70">
         <select id="class-select" name="gymclass_id">
          <% @gymclasses.each do |gymclass| %>
           <option value="<%= gymclass.id().to_i%>"> <%=gymclass.class_name()%></option>
@@ -17,10 +17,10 @@
       </div>
 
       <div class="row">
-        <div class="col-25">
+        <div class="col-30">
           <label for="instructor-select">Select an instructor: </label>
         </div>
-        <div class="col-75">
+        <div class="col-70">
         <select id="instructor-select" name="instructor_id">
           <% @instructors.each do |instructor| %>
           <option value="<%= instructor.id().to_i %>"> <%=instructor.full_name()%></option>
@@ -29,10 +29,10 @@
       </div>
 
       <div class="row">
-        <div class="col-25">
+        <div class="col-30">
           <label for="studio-select">Select a studio: </label>
         </div>
-        <div class="col-75">
+        <div class="col-70">
          <select id="studio-select" name="studio_id">
           <% @studios.each do |studio| %>
           <option value="<%= studio.id().to_i%>"> <%=studio.studio()%></option>
@@ -41,46 +41,46 @@
       </div>
 
       <div class="row">
-        <div class="col-25">
+        <div class="col-30">
           <label for="available-spaces">Available spaces: </label>
         </div>
-        <div class="col-75">
+        <div class="col-70">
           <input id="available-spaces" type="number" name="available_spaces" required>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-25">
+        <div class="col-30">
           <label for="time">Time: </label>
         </div>
-        <div class="col-75">
+        <div class="col-70">
           <input id="time" type="time" name="class_time" required>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-25">
+        <div class="col-30">
           <label for="date">Date: </label>
         </div>
-        <div class="col-75">
+        <div class="col-70">
           <input id="date" type="date" name="class_date" required>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-25">
+        <div class="col-30">
           <label for="duration">Duration: </label>
         </div>
-        <div class="col-75">
+        <div class="col-70">
           <input id="duration" type="number" name="duration" required>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-25">
+        <div class="col-30">
           <label for="peak-hours">Peak hours: </label>
         </div>
-        <div class="col-75">
+        <div class="col-70">
           <select id="peak-hours" name="peak_hours">
             <option value="false">No</option>
             <option value="true">Yes</option>
