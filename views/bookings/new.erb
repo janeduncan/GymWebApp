@@ -1,20 +1,42 @@
 <h2>Add booking</h2>
 <form action="/bookings" method="post">
 
-  <label for="class-select">Select a class: </label>
-    <select id="class-select" name="session_id">
-     <% @sessions.each do |session| %>
-      <option value="<%= session.id().to_i%>"> <%=session.gymclass()%> class at <%=session.class_time()%> on <%=session.class_date()%></option>
-      <% end %>
-    </select>
-  <br>
-  <label for="member-select">Select a member: </label>
-    <select id="member-select" name="member_id">
-      <% @members.each do |member| %>
-      <option value="<%= member.id().to_i %>"> <%= member.full_name() %></option>
-     <% end %>
-    </select>
-  <br>
+<div class="form">
+  <div class="box">
+    <form action="/bookings" method="post">
 
-  <input type="submit" value="Submit">
-</form>
+      <div class="row">
+        <div class="col-30">
+          <label for="class-select">Select a class: </label>
+        </div>
+        <div class="col-70">
+          <select id="class-select" name="session_id">
+           <% @sessions.each do |session| %>
+            <option value="<%= session.id().to_i%>"> <%=session.gymclass()%> class at <%=session.class_time()%> on <%=session.class_date()%></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-30">
+          <label for="member-select">Select a member: </label>
+        </div>
+        <div class="col-70">
+          <select id="member-select" name="member_id">
+            <% @members.each do |member| %>
+            <option value="<%= member.id().to_i %>"> <%= member.full_name() %></option>
+           <% end %>
+          </select>
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <input type="submit" value="Submit">
+      </div>
+
+    </form>
+  </div>
+</div>

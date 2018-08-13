@@ -1,18 +1,24 @@
 <h2>Class Information</h2>
-<p>Class: <%= @session.gymclass() %> </p>
-<p>Instructor: <%= @session.instructor.full_name() %> </p>
-<p>Studio: <%= @session.studio() %> </p>
-<p>Available spaces: <%= @session.available_spaces() %> </p>
-<p>Date: <%= @session.class_date() %> </p>
-<p>Time: <%= @session.class_time() %> </p>
-<p>Duration: <%= @session.duration() %> mins</p>
-<label for="member-select">Members: </label>
-  <select id="member-select" name="member_id">
-    <% @session.members.each do |member| %>
-    <option value="<%= member.id().to_i %>"> <%= member.full_name()%></option>
-   <% end %>
- </select><br><br>
 
+<p><b>Class:</b> <%= @session.gymclass() %> </p>
+<p><b>Instructor:</b> <%= @session.instructor.full_name() %> </p>
+<p><b>Studio:</b> <%= @session.studio() %> </p>
+<p><b>Available spaces:</b> <%= @session.available_spaces() %> </p>
+<p><b>Date:</b> <%= @session.class_date() %> </p>
+<p><b>Time:</b> <%= @session.class_time() %> </p>
+<p><b>Duration:</b> <%= @session.duration() %> mins</p>
+<div class="row">
+  <div class="col-30">
+    <label for="member-select"><b>Members: </b></label>
+  </div>
+  <div class="col-70">
+      <select id="member-select" name="member_id">
+        <% @session.members.each do |member| %>
+        <option value="<%= member.id().to_i %>"> <%= member.full_name()%></option>
+        <% end %>
+     </select>
+   </div>
+</div><br>
 
 <form action="/sessions/<%= @session.id %>/edit" method="get" style="display:inline;">
   <input type="submit" value="Edit class">

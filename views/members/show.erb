@@ -1,6 +1,6 @@
 <h2>Member Information</h2>
-<p>Name: <%= @member.full_name() %></p>
-<p>Membership Type: <%= @member.membership_type %> </p>
+<p><b>Name:</b> <%= @member.full_name() %></p>
+<p><b>Membership Type:</b> <%= @member.membership_type %> </p>
 
 <form action="/members/<%= @member.id %>/edit" method="get" style="display:inline;">
   <input type="submit" value="Edit member">
@@ -8,4 +8,4 @@
 
 <form action="/members/<%= @member.id %>/delete" method="post" style="display:inline;">
   <input type="submit" value="Delete member">
-</form>
+</form><br>

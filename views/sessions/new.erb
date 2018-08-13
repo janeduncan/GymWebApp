@@ -1,43 +1,97 @@
 <h2>Add class</h2>
-<form action="/sessions" method="post">
-  <label for="class-select">Select a class: </label>
-    <select id="class-select" name="gymclass_id">
-     <% @gymclasses.each do |gymclass| %>
-      <option value="<%= gymclass.id().to_i%>"> <%=gymclass.class_name()%></option>
-      <% end %>
-    </select>
-  <br>
-  <label for="instructor-select">Select an instructor: </label>
-    <select id="instructor-select" name="instructor_id">
-      <% @instructors.each do |instructor| %>
-      <option value="<%= instructor.id().to_i %>"> <%=instructor.full_name()%></option>
-     <% end %>
-    </select>
-  <br>
-  <label for="studio-select">Select a studio: </label>
-   <select id="studio-select" name="studio_id">
-     <% @studios.each do |studio| %>
-      <option value="<%= studio.id().to_i%>"> <%=studio.studio()%></option>
-      <% end %>
-   </select>
-  <br>
-  <label for="availble-spaces">Available spaces: </label>
-  <input id="available-spaces" type="number" name="available_spaces" required>
-  <br>
-  <label for="time">Time: </label>
-  <input id="time" type="time" name="class_time" required>
-  <br>
-  <label for="date">Date: </label>
-  <input id="date" type="date" name="class_date" required>
-  <br>
-  <label for="duration">Duration: </label>
-  <input id="duration" type="number" name="duration" required>
-  <br>
-  <label for="peak-hours">Peak hours: </label>
-  <select id="peak-hours" name="peak_hours">
-    <option value="false">No</option>
-    <option value="true">Yes</option>
-  </select>
-  <br>
-  <input type="submit" value="Submit">
-</form>
+
+<div class="form">
+  <div class="box">
+    <form action="/sessions" method="post">
+
+      <div class="row">
+        <div class="col-25">
+          <label for="class-select">Select a class: </label>
+        </div>
+        <div class="col-75">
+        <select id="class-select" name="gymclass_id">
+         <% @gymclasses.each do |gymclass| %>
+          <option value="<%= gymclass.id().to_i%>"> <%=gymclass.class_name()%></option>
+          <% end %>
+        </select></div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="instructor-select">Select an instructor: </label>
+        </div>
+        <div class="col-75">
+        <select id="instructor-select" name="instructor_id">
+          <% @instructors.each do |instructor| %>
+          <option value="<%= instructor.id().to_i %>"> <%=instructor.full_name()%></option>
+          <% end %>
+        </select></div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="studio-select">Select a studio: </label>
+        </div>
+        <div class="col-75">
+         <select id="studio-select" name="studio_id">
+          <% @studios.each do |studio| %>
+          <option value="<%= studio.id().to_i%>"> <%=studio.studio()%></option>
+          <% end %>
+        </select></div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="available-spaces">Available spaces: </label>
+        </div>
+        <div class="col-75">
+          <input id="available-spaces" type="number" name="available_spaces" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="time">Time: </label>
+        </div>
+        <div class="col-75">
+          <input id="time" type="time" name="class_time" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="date">Date: </label>
+        </div>
+        <div class="col-75">
+          <input id="date" type="date" name="class_date" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="duration">Duration: </label>
+        </div>
+        <div class="col-75">
+          <input id="duration" type="number" name="duration" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="peak-hours">Peak hours: </label>
+        </div>
+        <div class="col-75">
+          <select id="peak-hours" name="peak_hours">
+            <option value="false">No</option>
+            <option value="true">Yes</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <input type="submit" value="Submit">
+      </div>
+
+    </form>
+  </div>
+</div>

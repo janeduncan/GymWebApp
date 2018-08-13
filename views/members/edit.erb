@@ -1,18 +1,44 @@
 <h2>Edit member</h2>
 <form action="/members/<%= @member.id %>" method="post">
 
-  <label for="first-name">First name: </label>
-  <input id="first-name" type="text" name="first_name" value= <%= @member.first_name() %>>
-  <br>
-  <label for="last-name">Last name: </label>
-  <input id="last-name" type="text" name="last_name" value= <%= @member.last_name() %>>
-  <br>
-  <label for="membership-type">Membership type: </label>
-  <select id="membership-type" name="membership_type">
-    <option value="Standard">Standard</option>
-    <option value="Premium">Premium</option>
-  </select>
-  <br>
-  <input type="submit" value="Submit">
+<div class="form">
+  <div class="box">
+    <form action="/members" method="post">
 
-</form>
+      <div class="row">
+        <div class="col-30">
+          <label for="first-name">First name: </label>
+        </div>
+        <div class="col-70">
+          <input id="first-name" type="text" name="first_name" value= <%= @member.first_name() %>>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-30">
+          <label for="last-name">Last name: </label>
+        </div>
+        <div class="col-70">
+          <input id="last-name" type="text" name="last_name" value= <%= @member.last_name() %>>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-30">
+          <label for="membership-type">Membership type: </label>
+        </div>
+      <div class="col-70">
+      <select id="membership-type" name="membership_type">
+          <option value="">Select status</option>
+          <option value="Standard">Standard</option>
+          <option value="Premium">Premium</option>
+      </select></div>
+      </div>
+
+      <div class="row">
+        <input type="submit" value="Submit">
+      </div>
+
+    </form>
+  </div>
+</div><br>

@@ -1,12 +1,12 @@
 <h2>Booking Information</h2>
-<p>Member: <%= @booking.member.full_name() %> </p>
-<p>Class:  <%= @booking.gym_session.gymclass() %> </p>
-<p>Instructor: <%= @booking.gym_session.instructor.full_name() %> </p>
-<p>Studio: <%= @booking.gym_session.studio() %> </p>
-<p>Date:  <%= @booking.gym_session.class_date() %> </p>
-<p>Time:  <%= @booking.gym_session.class_time() %> </p>
-<p>Duration: <%= @booking.gym_session.duration() %> mins</p>
+<p><b>Member:</b> <%= @booking.member.full_name() %> </p>
+<p><b>Class:</b>  <%= @booking.gym_session.gymclass() %> </p>
+<p><b>Instructor:</b> <%= @booking.gym_session.instructor.full_name() %> </p>
+<p><b>Studio:</b> <%= @booking.gym_session.studio() %> </p>
+<p><b>Date:</b>  <%= @booking.gym_session.class_date() %> </p>
+<p><b>Time:</b>  <%= @booking.gym_session.class_time() %> </p>
+<p><b>Duration:</b> <%= @booking.gym_session.duration() %> mins</p>
 
 <form action="/bookings/<%= @booking.id %>/delete" method="post" style="display:inline;">
   <input type="submit" value="Delete booking">
-</form>
+</form><br>
