@@ -2,7 +2,7 @@
 
 <% @members.each do |member| %>
   <p>Name: <%= member.full_name() %> </p>
-  <p>Membership Type: <%= member.membership.type %>  </p>
+  <p>Membership Type: <%= member.membership_type %>  </p>
   <p> <a href="/members/<%= member.id %>">Show member</a> </p>
   <hr />
 <% end %>

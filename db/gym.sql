@@ -20,7 +20,7 @@ CREATE TABLE members (
   id SERIAL4 PRIMARY KEY,
   first_name VARCHAR(255),
   last_name VARCHAR(255),
-  membership_id INT REFERENCES memberships(id) ON DELETE CASCADE
+  membership_type VARCHAR(255)
 );
 
 CREATE TABLE instructors (
