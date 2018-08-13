@@ -21,3 +21,4 @@
 * [ ] Add membership class (instead of membership being in Member class)
 * [ ] Add a page with instructors portrait/contact information.
 * [ ] Add email/phone number to Member class.
+* [ ] Make page responsive (desktop & mobile).
