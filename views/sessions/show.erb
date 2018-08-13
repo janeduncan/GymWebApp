@@ -5,7 +5,15 @@
 <p>Date: <%= @session.class_date() %> </p>
 <p>Time: <%= @session.class_time() %> </p>
 <p>Duration: <%= @session.duration() %> mins</p>
-<p>Members:  </p>
+<label for="member-select">Members: </label>
+  <select id="member-select" name="member_id">
+    <% @session.members.each do |member| %>
+    <option value="<%= member.id().to_i %>"> <%= member.full_name()%></option>
+   <% end %>
+  </select>
+
+
+</p>
 
 <form action="/sessions/<%= @session.id %>/edit" method="get" style="display:inline;">
   <input type="submit" value="Edit class">

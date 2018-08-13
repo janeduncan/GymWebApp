@@ -4,6 +4,12 @@ DROP TABLE gymclasses;
 DROP TABLE members;
 DROP TABLE instructors;
 DROP TABLE studios;
+DROP TABLE membership;
+
+CREATE TABLE memberships (
+  id SERIAL4 PRIMARY KEY,
+  type VARCHAR(255)
+)
 
 CREATE TABLE studios (
   id SERIAL4 PRIMARY KEY,

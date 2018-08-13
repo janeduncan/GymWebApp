@@ -66,6 +66,4 @@ class Booking
     return Session.new(result.first())
   end
 
-
-
 end
