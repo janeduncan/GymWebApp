@@ -28,6 +28,7 @@ end
 post '/bookings' do
   @booking = Booking.new(params)
   @booking.save()
+  @bookings = Booking.all()
   erb(:"../views/bookings/create")
 end
 

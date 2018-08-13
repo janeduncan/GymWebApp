@@ -25,6 +25,7 @@ end
 post '/members' do
   @member = Member.new(params)
   @member.save()
+  @members = Member.all()
   erb(:"../views/members/create")
 end
 

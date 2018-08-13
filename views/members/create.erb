@@ -1,1 +1,7 @@
-<h2>Member added succesfully!</h2>
+<h2>Member added succesfully!</h2><br>
+
+<% @members.each do |member| %>
+  <p><%= member.full_name() %> • <%= member.membership_type %> membership</p>
+  <p><div class="show"><a href="/members/<%= member.id %>">Show member</a></div></p>
+  <hr />
+<% end %>

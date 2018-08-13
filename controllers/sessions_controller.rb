@@ -31,6 +31,7 @@ end
 post '/sessions' do
   @session = Session.new( params )
   @session.save()
+  @sessions = Session.all()
   erb(:"../views/sessions/create")
 end
 

@@ -1,1 +1,9 @@
-<h2>Class added succesfully!</h2>
+<h2>Class added succesfully!</h2><br>
+
+<% @sessions.each do |session| %>
+
+  <p><%= session.gymclass() %> class at <%= session.class_time() %> on <%= session.class_date() %> with <%= session.instructor.full_name() %> </p>
+
+  <p><div class="show"><a href="/sessions/<%= session.id %>">Show class</a></div></p>
+  <hr />
+<% end %>
