@@ -1,3 +1,4 @@
+<h2>Class Information</h2>
 <p>Class: <%= @session.gymclass() %> </p>
 <p>Instructor: <%= @session.instructor.full_name() %> </p>
 <p>Studio: <%= @session.studio() %> </p>
@@ -10,10 +11,8 @@
     <% @session.members.each do |member| %>
     <option value="<%= member.id().to_i %>"> <%= member.full_name()%></option>
    <% end %>
-  </select>
+ </select><br><br>
 
-
-</p>
 
 <form action="/sessions/<%= @session.id %>/edit" method="get" style="display:inline;">
   <input type="submit" value="Edit class">
@@ -22,3 +21,4 @@
 <form action="/sessions/<%= @session.id %>/delete" method="post" style="display:inline;">
   <input type="submit" value="Delete class">
 </form>
+<br>

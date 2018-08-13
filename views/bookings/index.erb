@@ -1,10 +1,10 @@
-<h1>All bookings</h1>
+<h2>All bookings</h2><br>
 
 <% @bookings.each do |booking| %>
 
-  <p> <%= booking.member.full_name() %> • <%= booking.gym_session.gymclass() %> class on <%= booking.gym_session.class_date() %> at <%= booking.gym_session.class_time() %> </p>
+  <p> <%= booking.member.full_name() %> • <%= booking.gym_session.gymclass() %> class at <%= booking.gym_session.class_time() %> on <%= booking.gym_session.class_date() %></p>
 
-  <p> <a href="/bookings/<%= booking.id %>">Show booking</a> </p>
+  <p><div class="show"><a href="/bookings/<%= booking.id %>">Show booking</a></div></p>
 
   <hr />
 <% end %>

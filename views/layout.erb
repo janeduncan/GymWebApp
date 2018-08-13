@@ -3,19 +3,39 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Git Pumped Gym</title>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a class="active" href="/">Home</a></li>
-        <!-- <li><a href="/members">Members</a></li>
-        <li><a href="/sessions">Classes</a></li>
-        <li><a href="/bookings">Bookings</a></li>
-        <li><a href="/trainers">Trainers</a></li> -->
-        <li style="float:right"><a href="/login">Log In</a></li>
-      </ul>
-    </nav>
-    <%= yield %>
+      <nav>
+          <div class="dropdown">
+            <button class="dropbtn">Menu
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/">Home</a>
+              <a href="/members">Members</a>
+              <a href="/members/new">Add Member</a>
+              <a href="/sessions">Classes</a>
+              <a href="/sessions/new">Add Class</a>
+              <a href="/bookings">Bookings</a>
+              <a href="/bookings/new">Add Booking</a>
+              <a href="/trainers">Trainers</a>
+            </div>
+          </div>
+          <div class="right">
+          <a href="/">Log In</a>
+          </div>
+
+          <center><img src="/images/gym_logo.jpg" alt="logo" width="169px" height="75px"></center>
+
+
+      </nav>
+    <main><br>
+      <%= yield %>
+    <br></main>
   </body>
+  <footer>
+    <p>© 2018 Jane Duncan</p>
+  </footer>
 </html>

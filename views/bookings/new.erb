@@ -1,10 +1,10 @@
-<h1>Add booking</h1>
+<h2>Add booking</h2>
 <form action="/bookings" method="post">
 
   <label for="class-select">Select a class: </label>
     <select id="class-select" name="session_id">
      <% @sessions.each do |session| %>
-      <option value="<%= session.id().to_i%>"> <%=session.gymclass()%> <%=session.class_date()%> <%=session.class_time()%> </option>
+      <option value="<%= session.id().to_i%>"> <%=session.gymclass()%> class at <%=session.class_time()%> on <%=session.class_date()%></option>
       <% end %>
     </select>
   <br>
