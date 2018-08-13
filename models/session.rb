@@ -68,7 +68,8 @@ class Session
   def instructor()
     sql = "SELECT * FROM instructors WHERE id = $1"
     values = [@instructor_id]
-    return SqlRunner.run(sql, values).first['first_name']
+    instructor = SqlRunner.run(sql, values)
+    return Instructor.new(instructor.first())
   end
 
   def studio()

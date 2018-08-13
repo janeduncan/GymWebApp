@@ -18,5 +18,6 @@
 
 * [x] Add trainer class.
 * [x] Add studio class.
-* [ ] Add membership class (instead of membership type being in Member class)
+* [ ] Add membership class (instead of membership being in Member class)
 * [ ] Add a page with instructors portrait/contact information.
+* [ ] Add email/phone number to Member class.

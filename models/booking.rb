@@ -52,13 +52,11 @@ class Booking
     return Booking.new(booking.first())
   end
 
-  # Not sure about these?
-
   def member()
     sql = "SELECT * FROM members WHERE id = $1"
     values = [@member_id]
-    result = SqlRunner.run(sql, values)
-    return Member.new(result.first())
+    member = SqlRunner.run(sql, values)
+    return Member.new(member.first())
   end
 
   def gym_session()
@@ -67,5 +65,7 @@ class Booking
     result = SqlRunner.run(sql, values)
     return Session.new(result.first())
   end
+
+
 
 end

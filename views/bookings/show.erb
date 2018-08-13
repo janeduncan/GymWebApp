@@ -1,5 +1,10 @@
-<p>Session:  </p>
-<p>Member:  </p>
+<p>Member: <%= @booking.member.full_name() %> </p>
+<p>Class:  <%= @booking.gym_session.gymclass() %> </p>
+<p>Instructor: <%= @booking.gym_session.instructor.full_name() %> </p>
+<p>Studio: <%= @booking.gym_session.studio() %> </p>
+<p>Date:  <%= @booking.gym_session.class_date() %> </p>
+<p>Time:  <%= @booking.gym_session.class_time() %> </p>
+<p>Duration: <%= @booking.gym_session.duration() %> mins</p>
 
 <form action="/bookings/<%= @booking.id %>/delete" method="post" style="display:inline;">
   <input type="submit" value="Delete booking">

@@ -2,7 +2,7 @@
 
 <% @bookings.each do |booking| %>
 
-  <p>     <%= booking.member() %>       <%= booking.gym_session() %>          </p>
+  <p> <%= booking.member.full_name() %> • <%= booking.gym_session.gymclass() %> • <%= booking.gym_session.class_date() %> • <%= booking.gym_session.class_time() %> </p>
 
   <p> <a href="/bookings/<%= booking.id %>">Show booking</a> </p>
 
