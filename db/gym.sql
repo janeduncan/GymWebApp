@@ -4,12 +4,12 @@ DROP TABLE gymclasses;
 DROP TABLE members;
 DROP TABLE instructors;
 DROP TABLE studios;
-DROP TABLE membership;
+DROP TABLE memberships;
 
 CREATE TABLE memberships (
   id SERIAL4 PRIMARY KEY,
   type VARCHAR(255)
-)
+);
 
 CREATE TABLE studios (
   id SERIAL4 PRIMARY KEY,
@@ -20,7 +20,7 @@ CREATE TABLE members (
   id SERIAL4 PRIMARY KEY,
   first_name VARCHAR(255),
   last_name VARCHAR(255),
-  membership_type VARCHAR(255)
+  membership_id INT REFERENCES memberships(id) ON DELETE CASCADE
 );
 
 CREATE TABLE instructors (

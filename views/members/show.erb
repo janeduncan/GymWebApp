@@ -1,5 +1,5 @@
 <p>Name: <%= @member.full_name() %></p>
-<p>Membership Type: <%= @member.membership_type() %></p>
+<p>Membership Type: <%= @member.membership.type %> </p>
 
 <form action="/members/<%= @member.id %>/edit" method="get" style="display:inline;">
   <input type="submit" value="Edit member">
