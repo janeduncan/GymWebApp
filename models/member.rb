@@ -56,11 +56,13 @@ class Member
     return "#{first_name} #{last_name}"
   end
 
-  def membership()
-    sql = "SELECT * FROM memberships WHERE id = $1"
-    values = [@membership_type]
-    member = SqlRunner.run(sql, values)
-    return Membership.new(member.first())
-  end
+  # Not currently in use
+  
+  # def membership()
+  #   sql = "SELECT * FROM memberships WHERE id = $1"
+  #   values = [@membership_type]
+  #   member = SqlRunner.run(sql, values)
+  #   return Membership.new(member.first())
+  # end
 
 end

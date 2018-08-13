@@ -80,15 +80,8 @@ class Session
 
   # Need to add a method to show all members that are registered to a class session!
 
-  # def members()
-  #   sql = "SELECT * FROM members WHERE id = $1"
-  #   values = [@gymclass_id]
-  #   members = SqlRunner.run(sql, values)
-  #   result = members.map{ |member| Member.new(member) }
-  # end
-
   def members()
-    sql = "SELECT * FROM bookings WHERE id = $1"
+    sql = "SELECT members.* FROM members INNER JOIN bookings on members.id = bookings.member_id WHERE bookings.session_id = $1"
     values = [@id]
     members = SqlRunner.run(sql, values)
     result = members.map{ |member| Member.new(member) }
