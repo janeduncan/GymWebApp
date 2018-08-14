@@ -2,8 +2,8 @@ require_relative('../db/sql_runner')
 
 class Session
 
-  attr_reader :id
-  attr_accessor :gymclass_id, :instructor_id, :studio_id, :available_spaces, :class_time, :class_date, :duration, :peak_hours
+  attr_reader :id, :gymclass_id, :instructor_id, :studio_id, :available_spaces, :class_time, :class_date, :duration, :peak_hours
+  attr_accessor
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']

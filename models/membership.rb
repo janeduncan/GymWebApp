@@ -2,8 +2,8 @@ require_relative('../db/sql_runner')
 
 class Membership
 
-  attr_reader :id
-  attr_accessor :type
+  attr_reader :id, :type
+  attr_accessor 
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']

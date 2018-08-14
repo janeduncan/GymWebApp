@@ -1,7 +1,7 @@
 /* Styles the body */
 
 body {
-  background-color: #ffffff;
+  background-color: #f1f1f1;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
@@ -17,8 +17,9 @@ a {
 
 main {
     background-color: #ffffff;
-    padding: 10px;
-    max-width:700px;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width:750px;
     margin: auto;
     clear: left;
 }
@@ -36,7 +37,7 @@ h2 {
 /* Styles the footer */
 
 footer {
-    background-color: #e2e2e2;
+    /* background-color: #e2e2e2; */
     padding: 10px;
     text-align: center;
 }
@@ -231,8 +232,8 @@ input[type=submit] {
     background-color: #35aea5;
     color: white;
     padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
+    border-color: white;
+    border-radius: 6px;
     cursor: pointer;
     float: right;
 }
@@ -250,7 +251,7 @@ input[type=submit]:hover {
 .col-30 {
     float: left;
     width: 30%;
-    margin-top: 6px;
+    /* margin-top: 6px; */
 }
 
 .col-70 {
