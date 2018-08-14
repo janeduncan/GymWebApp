@@ -3,7 +3,6 @@ require_relative('../db/sql_runner')
 class GymClass
 
   attr_reader :id, :class_name, :description
-  attr_accessor
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']

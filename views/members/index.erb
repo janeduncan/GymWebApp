@@ -11,7 +11,7 @@
     <tbody>
         <% @members.each do |member| %>
         <tr>
-            <td><a href="/members/<%= member.id %>"><%= member.full_name() %></a></td>
+            <td><a href="/members/<%= member.id %>"><b><%= member.full_name() %></b></a></td>
             <td><%= member.membership_type %> membership</td>
         </tr>
         <% end %>

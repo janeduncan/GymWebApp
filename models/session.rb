@@ -3,7 +3,6 @@ require_relative('../db/sql_runner')
 class Session
 
   attr_reader :id, :gymclass_id, :instructor_id, :studio_id, :available_spaces, :class_time, :class_date, :duration, :peak_hours
-  attr_accessor
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']
@@ -13,6 +12,7 @@ class Session
     @available_spaces = options['available_spaces'].to_i()
     @class_time = options['class_time']
     @class_date = options['class_date']
+    # @class_date = DateTime.strptime(options['class_date'], "%Y-%m-%d")
     @duration = options['duration']
     @peak_hours = options['peak_hours']
   end
@@ -57,8 +57,6 @@ class Session
     return result
   end
 
-  # These methods should return an object not just the name?
-
   def gymclass()
     sql = "SELECT * FROM gymclasses WHERE id = $1"
     values = [@gymclass_id]
@@ -78,13 +76,40 @@ class Session
     return SqlRunner.run(sql, values).first['studio']
   end
 
-  # Need to add a method to show all members that are registered to a class session!
-
   def members()
     sql = "SELECT members.* FROM members INNER JOIN bookings on members.id = bookings.member_id WHERE bookings.session_id = $1"
     values = [@id]
     members = SqlRunner.run(sql, values)
     result = members.map{ |member| Member.new(member) }
   end
+
+  def pretty_time()
+    sql = "SELECT to_char(class_time, 'HH24:MI') FROM sessions WHERE id = $1"
+    values = [@id]
+    return SqlRunner.run(sql, values).first['to_char']
+  end
+
+  def add_member_to_class(member)
+    return unless @available_spaces > 0
+    return unless member.can_book_class?()
+    Booking.new("member_id" => member.id, "session_id" => @id).save()
+    @available_spaces -= 1
+    update()
+  end
+
+  # Checks if a class is within a specified date range
+  # Will only work if @class_date is a String (cant compare DateTime & String)
+  # Would be better to use DateTime.now as start_date?
+
+  def upcoming_class()
+    start_date = "2017-03-15"
+    end_date = "2018-12-01"
+    return true if @class_date.between?(start_date, end_date)
+  end
+
+  # Removed this for now so upcoming_class() method works
+  # def pretty_date()
+  #   return @class_date.strftime("%d-%b-%Y")
+  # end
 
 end

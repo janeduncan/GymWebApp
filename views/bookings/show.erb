@@ -5,7 +5,7 @@
   <p><b>Instructor:</b> <%= @booking.gym_session.instructor.full_name() %> </p>
   <p><b>Studio:</b> <%= @booking.gym_session.studio() %> </p>
   <p><b>Date:</b>  <%= @booking.gym_session.class_date() %> </p>
-  <p><b>Time:</b>  <%= @booking.gym_session.class_time() %> </p>
+  <p><b>Time:</b>  <%= @booking.gym_session.pretty_time() %> </p>
   <p><b>Duration:</b> <%= @booking.gym_session.duration() %> mins</p>
 
   <form action="/bookings/<%= @booking.id %>/delete" method="post" style="display:inline;">

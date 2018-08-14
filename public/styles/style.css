@@ -163,7 +163,6 @@ nav a:hover, .dropdown:hover .dropbtn {
 }
 
 .button2 {
-  /* background-image: url('/images/weights_bk_t.jpg');  */
   background-size: cover;
   display: inline-block;
   border-radius: 4px;
@@ -344,5 +343,5 @@ table th {
 
 .individuallisting {
   margin: auto;
-  width: 70%;
+  width: 80%;
 }

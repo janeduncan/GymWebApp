@@ -2,27 +2,28 @@ require_relative('../db/sql_runner')
 
 class Member
 
-  attr_reader :id, :first_name, :last_name, :membership_type
-  attr_accessor
+  attr_reader :id, :first_name, :last_name, :membership_type, :email, :phone_number
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
     @membership_type = options['membership_type']
+    @email = options['email']
+    @phone_number = options['phone_number']
   end
 
   def save()
-    sql ="INSERT INTO members (first_name, last_name, membership_type)
-    VALUES ($1, $2, $3) RETURNING *"
-    values = [@first_name, @last_name, @membership_type]
+    sql ="INSERT INTO members (first_name, last_name, membership_type, email, phone_number)
+    VALUES ($1, $2, $3, $4, $5) RETURNING *"
+    values = [@first_name, @last_name, @membership_type, @email, @phone_number]
     booking = SqlRunner.run(sql, values)
     @id = booking.first()['id'].to_i()
   end
 
   def update()
-    sql = "UPDATE members SET (first_name, last_name, membership_type) = ($1, $2, $3) WHERE id = $4"
-    values = [@first_name, @last_name, @membership_type, @id]
+    sql = "UPDATE members SET (first_name, last_name, membership_type, email, phone_number) = ($1, $2, $3, $4, $5) WHERE id = $6"
+    values = [@first_name, @last_name, @membership_type, @email, @phone_number, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -56,13 +57,8 @@ class Member
     return "#{first_name} #{last_name}"
   end
 
-  # Not currently in use
-
-  # def membership()
-  #   sql = "SELECT * FROM memberships WHERE id = $1"
-  #   values = [@membership_type]
-  #   member = SqlRunner.run(sql, values)
-  #   return Membership.new(member.first())
-  # end
-
+  def can_book_class?()
+    return true if (@membership_type == "Standard" && @off_peak == true) || (@membership_type == "Premium")
+  end
+  
 end

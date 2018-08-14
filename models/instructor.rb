@@ -3,7 +3,6 @@ require_relative('../db/sql_runner')
 class Instructor
 
   attr_reader :id, :first_name, :last_name, :email, :phone_number
-  attr_accessor
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']

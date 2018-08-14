@@ -25,15 +25,9 @@ class TestSession < MiniTest::Test
     assert_equal(12, result)
   end
 
-  # this test isn't working?
   def test_class_time()
     result = @session.class_time()
     assert_equal("09:00:00", result)
-  end
-
-  def test_class_time()
-    result = @session.class_date()
-    assert_equal("2018-09-01", result)
   end
 
   def test_duration()
@@ -44,6 +38,11 @@ class TestSession < MiniTest::Test
   def test_peak_hours()
     result = @session.peak_hours()
     assert_equal(false, result)
+  end
+
+  def test_add_member()
+    result = @session.add_member()
+    assert_equal(11, result)
   end
 
 end

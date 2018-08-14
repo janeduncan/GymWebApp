@@ -2,6 +2,8 @@
 <div class="individuallisting">
   <p><b>Name:</b> <%= @member.full_name() %></p>
   <p><b>Membership Type:</b> <%= @member.membership_type %> </p>
+  <p><b>Email:</b> <%= @member.email %> </p>
+  <p><b>Phone Number:</b> <%= @member.phone_number %> </p>
 
   <form action="/members/<%= @member.id %>/edit" method="get" style="display:inline;">
     <input type="submit" value="Edit member">

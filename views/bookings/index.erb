@@ -13,9 +13,9 @@
     <tbody>
         <% @bookings.each do |booking| %>
         <tr>
-            <td><a href="/bookings/<%= booking.id %>"><%= booking.member.full_name() %></a></td>
-            <td><%= booking.gym_session.gymclass() %> class</td>
-            <td><%= booking.gym_session.class_time() %></td>
+            <td><a href="/bookings/<%= booking.id %>"><b><%= booking.member.full_name() %></b></a></td>
+            <td><%= booking.gym_session.gymclass() %></td>
+            <td><%= booking.gym_session.pretty_time() %></td>
             <td><%= booking.gym_session.class_date() %></td>
         </tr>
         <% end %>
