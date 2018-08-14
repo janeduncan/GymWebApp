@@ -1,4 +1,4 @@
-### User Journey - Add a gym class
+### User Needs
 ***
 
 #### 1. As a...
