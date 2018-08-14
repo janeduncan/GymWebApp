@@ -78,8 +78,10 @@ member22.save()
 
 instructor1 = Instructor.new({ "first_name" => "Patrick", "last_name" => "Bateman" })
 instructor2 = Instructor.new({ "first_name" => "Michael", "last_name" => "Scott" })
+instructor3 = Instructor.new({ "first_name" => "Ron", "last_name" => "Swanson" })
 instructor1.save()
 instructor2.save()
+instructor3.save()
 
 # Classes
 
@@ -100,7 +102,7 @@ session1 = Session.new({ "gymclass_id" => class1.id(), "instructor_id" => instru
 
 session2 = Session.new({ "gymclass_id" => class2.id(), "instructor_id" => instructor2.id(), "studio_id" => studio2.id(), "available_spaces" => 12, "class_time" => "09:00:00", "class_date" => "2018-09-02", "duration" => 30, "peak_hours" => true })
 
-session3 = Session.new({ "gymclass_id" => class3.id(), "instructor_id" => instructor1.id(), "studio_id" => studio3.id(), "available_spaces" => 10, "class_time" => "13:00:00", "class_date" => "2018-09-03", "duration" => 30, "peak_hours" => false })
+session3 = Session.new({ "gymclass_id" => class3.id(), "instructor_id" => instructor3.id(), "studio_id" => studio3.id(), "available_spaces" => 10, "class_time" => "13:00:00", "class_date" => "2018-09-03", "duration" => 30, "peak_hours" => false })
 
 session4 = Session.new({ "gymclass_id" => class4.id(), "instructor_id" => instructor2.id(), "studio_id" => studio2.id(), "available_spaces" => 12, "class_time" => "18:30:00", "class_date" => "2018-09-04", "duration" => 30, "peak_hours" => true })
 

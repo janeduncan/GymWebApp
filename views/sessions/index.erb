@@ -6,6 +6,7 @@
           <th>Class</th>
           <th>Time</th>
           <th>Date</th>
+          <th>Instructor</th>
         </tr>
     </thead>
 
@@ -13,6 +14,7 @@
         <% @sessions.each do |session| %>
         <tr>
             <td><a href="/sessions/<%= session.id %>"><%= session.gymclass() %> class</a></td>
+            <td><%= session.instructor.full_name()%></td>
             <td><%= session.class_time() %></td>
             <td><%= session.class_date() %></td>
         </tr>
