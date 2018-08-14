@@ -2,8 +2,8 @@ require_relative('../db/sql_runner')
 
 class Booking
 
-  attr_reader :id
-  attr_accessor :member_id, :session_id
+  attr_reader :id, :member_id, :session_id
+  attr_accessor
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']
