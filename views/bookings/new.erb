@@ -12,12 +12,12 @@
           <div class="col-70">
             <select id="class-select" name="session_id">
              <% @sessions.each do |session| %>
-              <option value="<%= session.id().to_i%>"> <%=session.gymclass()%> class at <%=session.pretty_time()%> on <%=session.class_date()%></option>
+              <option value="<%= session.id().to_i%>"> <%=session.gymclass()%> class at <%=session.pretty_time()%> on <%=session.class_date()%> with <%=session.instructor.full_name()%></option>
               <% end %>
             </select>
           </div>
         </div><br>
-        
+
         <div class="row">
           <div class="col-30">
             <label for="member-select">Select a member: </label>
