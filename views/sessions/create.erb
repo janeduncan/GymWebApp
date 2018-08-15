@@ -1,10 +1,21 @@
 <h1>Class added succesfully!</h1><br>
-
-<% @sessions.each do |session| %>
-
-  <p><%= session.gymclass() %> class at <%= session.pretty_time() %> on <%= session.class_date() %> with <%= session.instructor.full_name() %> </p>
-
-  <p><div class="show"><a href="/sessions/<%= session.id %>">Show class</a></div></p>
-  <hr />
-  
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Instructor</th>
+      <th>Time</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sessions.each do |session| %>
+    <tr>
+      <td><a href="/sessions/<%= session.id %>"><b><%= session.gymclass() %></b></a></td>
+      <td><%= session.instructor.full_name()%></td>
+      <td><%= session.pretty_time() %></td>
+      <td><%= session.class_date()%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
