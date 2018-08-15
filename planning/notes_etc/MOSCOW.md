@@ -12,13 +12,11 @@
 #### SHOULD (Extensions)
 
 * [ ] Classes could have a maximum capacity, and users can only be added while there is space remaining.
-* [ ] The gym could be able to give its members Premium or Standard membership. Standard members can only be signed up for classes during off-peak hours.
+* [ ] The gym could be able to give its members Premium or Standard membership. Standard members can only be signed up for classes during off-peak hours. CODE WRITTEN - DOESN'T TIE UP WITH WEB!
 
 #### COULD (Additional stuff)
 
 * [x] Add trainer class.
 * [x] Add studio class.
-* [ ] Add membership class (instead of membership being in Member class)
-* [ ] Add a page with instructors portrait/contact information.
-* [ ] Add email/phone number to Member class.
-* [ ] Make page responsive (desktop & mobile).
+* [ ] Add membership class (instead of membership being in Member class) CODE WRITTEN - BUT NOT IMPLEMENTED!
+* [x] Add a page with instructors portrait/contact information.

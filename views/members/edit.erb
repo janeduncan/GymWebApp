@@ -1,62 +1,64 @@
 <h1>Edit member</h1>
 <form action="/members/<%= @member.id %>" method="post">
+  <div class="slimform">
+    <div class="form">
+      <div class="box">
+        <form action="/members" method="post">
 
-<div class="form">
-  <div class="box">
-    <form action="/members" method="post">
+          <div class="row">
+            <div class="col-30">
+              <label for="first-name">First name: </label>
+            </div>
+            <div class="col-70">
+              <input id="first-name" type="text" name="first_name" value= <%= @member.first_name() %>>
+            </div>
+          </div>
 
-      <div class="row">
-        <div class="col-30">
-          <label for="first-name">First name: </label>
-        </div>
-        <div class="col-70">
-          <input id="first-name" type="text" name="first_name" value= <%= @member.first_name() %>>
-        </div>
+          <div class="row">
+            <div class="col-30">
+              <label for="last-name">Last name: </label>
+            </div>
+            <div class="col-70">
+              <input id="last-name" type="text" name="last_name" value= <%= @member.last_name() %>>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-30">
+              <label for="email">Email: </label>
+            </div>
+            <div class="col-70">
+              <input id="email" type="text" name="email" value= <%= @member.email() %>>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-30">
+              <label for="phone-number">Phone Number: </label>
+            </div>
+            <div class="col-70">
+              <input id="phone-number" type="text" name="phone_number" value= <%= @member.phone_number() %>>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-30">
+              <label for="membership-type">Membership type: </label>
+            </div>
+          <div class="col-70">
+          <select id="membership-type" name="membership_type">
+              <option value="">Select status</option>
+              <option value="Standard">Standard</option>
+              <option value="Premium">Premium</option>
+          </select></div>
+          </div>
+
+          <div class="row">
+            <input type="submit" value="Submit">
+          </div>
+          
+        </form>
       </div>
-
-      <div class="row">
-        <div class="col-30">
-          <label for="last-name">Last name: </label>
-        </div>
-        <div class="col-70">
-          <input id="last-name" type="text" name="last_name" value= <%= @member.last_name() %>>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-30">
-          <label for="email">Email: </label>
-        </div>
-        <div class="col-70">
-          <input id="email" type="text" name="email" value= <%= @member.email() %>>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-30">
-          <label for="phone-number">Phone Number: </label>
-        </div>
-        <div class="col-70">
-          <input id="phone-number" type="text" name="phone_number" value= <%= @member.phone_number() %>>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-30">
-          <label for="membership-type">Membership type: </label>
-        </div>
-      <div class="col-70">
-      <select id="membership-type" name="membership_type">
-          <option value="">Select status</option>
-          <option value="Standard">Standard</option>
-          <option value="Premium">Premium</option>
-      </select></div>
-      </div>
-
-      <div class="row">
-        <input type="submit" value="Submit">
-      </div>
-
-    </form>
+    </div>
   </div>
-</div><br>
+</form><br>

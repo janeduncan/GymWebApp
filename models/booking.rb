@@ -19,7 +19,6 @@ class Booking
   end
 
   # Don't need this?
-
   # def update()
   #   sql = "UPDATE bookings SET (member_id, session_id) = ($1, $2) WHERE id = $3"
   #   values = [@member_id, @session_id, @id]

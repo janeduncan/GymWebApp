@@ -2,24 +2,25 @@ require_relative('../db/sql_runner')
 
 class Membership
 
-  attr_reader :id, :type
+  attr_reader :id, :type, :active
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']
     @type = options['type']
+    @active = true
   end
 
   def save()
-    sql ="INSERT INTO memberships (type)
-    VALUES ($1) RETURNING *"
-    values = [@type]
+    sql ="INSERT INTO memberships (type, active)
+    VALUES ($1, $2) RETURNING *"
+    values = [@type, @active]
     membership = SqlRunner.run(sql, values)
     @id = membership.first()['id'].to_i()
   end
 
   def update()
-    sql = "UPDATE memberships SET type = $1 WHERE id = $2"
-    values = [@type, @id]
+    sql = "UPDATE memberships SET (type, active) = ($1, $2) WHERE id = $3"
+    values = [@type, @active, @id]
     SqlRunner.run(sql, values)
   end
 

@@ -1,25 +1,22 @@
 <h1>All Classes</h1><br>
 
 <table>
-    <thead>
-        <tr>
-          <th>Class</th>
-          <th>Instructor</th>
-          <th>Time</th>
-          <th>Date</th>
-        </tr>
-    </thead>
-
-    <tbody>
-
-        <% @sessions.each do |session| %>
-        <tr>
-              <td><a href="/sessions/<%= session.id %>"><b><%= session.gymclass() %></b></a></td>
-              <td><%= session.instructor.full_name()%></td>
-              <td><%= session.pretty_time() %></td>
-              <td><%= session.class_date()%></td>
-        </tr>
-        <% end %>
-    </tbody>
-
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Instructor</th>
+      <th>Time</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sessions.each do |session| %>
+    <tr>
+      <td><a href="/sessions/<%= session.id %>"><b><%= session.gymclass() %></b></a></td>
+      <td><%= session.instructor.full_name()%></td>
+      <td><%= session.pretty_time() %></td>
+      <td><%= session.class_date()%></td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>

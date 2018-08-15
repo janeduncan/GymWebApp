@@ -8,7 +8,8 @@ DROP TABLE memberships;
 
 CREATE TABLE memberships (
   id SERIAL4 PRIMARY KEY,
-  type VARCHAR(255)
+  type VARCHAR(255),
+  active BOOLEAN
 );
 
 CREATE TABLE studios (

@@ -40,9 +40,4 @@ class TestSession < MiniTest::Test
     assert_equal(false, result)
   end
 
-  def test_add_member()
-    result = @session.add_member()
-    assert_equal(11, result)
-  end
-
 end

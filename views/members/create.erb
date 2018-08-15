@@ -1,20 +1,18 @@
 <h1>Member added succesfully!</h1><br>
 
 <table>
-    <thead>
-        <tr>
-          <th>Name</th>
-          <th>Membership Type</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <% @members.each do |member| %>
-        <tr>
-            <td><a href="/members/<%= member.id %>"><b><%= member.full_name() %></b></a></td>
-            <td><%= member.membership_type %> membership</td>
-        </tr>
-        <% end %>
-    </tbody>
-
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Membership Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @members.each do |member| %>
+    <tr>
+      <td><a href="/members/<%= member.id %>"><b><%= member.full_name() %></b></a></td>
+      <td><%= member.membership_type %> membership</td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>

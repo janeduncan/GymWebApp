@@ -13,12 +13,12 @@
       <label for="member-select"><b>Members: </b></label>
     </div>
     <div class="col-70">
-        <select id="member-select" name="member_id">
-          <% @session.members.each do |member| %>
-          <option value="<%= member.id().to_i %>"> <%= member.full_name()%></option>
-          <% end %>
-       </select>
-     </div>
+      <select id="member-select" name="member_id">
+        <% @session.members.each do |member| %>
+        <option value="<%= member.id().to_i %>"> <%= member.full_name()%></option>
+        <% end %>
+     </select>
+    </div>
   </div><br>
 
   <form action="/sessions/<%= @session.id %>/edit" method="get" style="display:inline;">
@@ -27,7 +27,6 @@
 
   <form action="/sessions/<%= @session.id %>/delete" method="post" style="display:inline;">
     <input type="submit" value="Delete class">
-  </form>
-  <br>
-  <br>
+  </form><br><br>
+
 </div>

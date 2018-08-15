@@ -15,8 +15,12 @@ Member.delete_all()
 Studio.delete_all()
 Membership.delete_all()
 
-# Membership
+# Membership (NOT IN USE)
 
+# membership1 = Membership.new ({ "type" => "Standard" })
+# membership2 = Membership.new ({ "type" => "Premium" })
+# membership1.save
+# membership2.save
 
 # Studios
 

@@ -97,13 +97,13 @@ class Session
     update()
   end
 
-  # Checks if a class is within a specified date range
+  # Checks if a class is within a specified date range (i.e the future not a past class)
   # Will only work if @class_date is a String (cant compare DateTime & String)
   # Would be better to use DateTime.now as start_date?
 
   def upcoming_class()
-    start_date = "2017-03-15"
-    end_date = "2018-12-01"
+    start_date = "2018-08-15"
+    end_date = "2018-12-31"
     return true if @class_date.between?(start_date, end_date)
   end
 

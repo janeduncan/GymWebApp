@@ -19,6 +19,7 @@ get '/bookings/new' do
   erb(:"../views/bookings/new")
 end
 
+# Show
 get '/bookings/:id' do
   @booking = Booking.find(params[:id])
   erb(:"../views/bookings/show")
