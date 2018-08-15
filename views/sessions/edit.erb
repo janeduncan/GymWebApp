@@ -45,7 +45,7 @@
             <label for="available-spaces">Available spaces: </label>
           </div>
           <div class="col-70">
-            <input id="available-spaces" type="number" name="available_spaces" value= <%= @session.available_spaces() %>>
+            <input id="available-spaces" type="number" name="available_spaces" min="0" value= <%= @session.available_spaces() %>>
           </div>
         </div>
 
@@ -72,7 +72,7 @@
             <label for="duration">Duration: </label>
           </div>
           <div class="col-70">
-            <input id="duration" type="number" name="duration" value= <%= @session.duration() %>>
+            <input id="duration" type="number" name="duration" min="0" value= <%= @session.duration() %>>
           </div>
         </div>
 
