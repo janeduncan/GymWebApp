@@ -18,5 +18,9 @@
 
 * [x] Add trainer class.
 * [x] Add studio class.
-* [ ] Add membership class (instead of membership being in Member class) CODE WRITTEN - BUT NOT IMPLEMENTED!
+* [x] Add membership class (instead of membership being in Member class)
 * [x] Add a page with instructors portrait/contact information.
+
+#### COULD (Possible stuff)
+
+* [ ] Calendar view for upcoming classes.

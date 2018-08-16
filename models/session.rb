@@ -108,8 +108,8 @@ class Session
   end
 
   # Removed this for now so upcoming_class() method works
-  # def pretty_date()
-  #   return @class_date.strftime("%d-%b-%Y")
-  # end
+  def pretty_date()
+    return @class_date.strftime("%d-%b-%Y")
+  end
 
 end
