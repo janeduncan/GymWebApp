@@ -24,3 +24,5 @@
 #### COULD (Possible stuff)
 
 * [ ] Calendar view for upcoming classes.
+* [ ] Responsive design.
+* [ ] Accessibility.
